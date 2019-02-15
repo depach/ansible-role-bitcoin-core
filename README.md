@@ -1,8 +1,8 @@
-[![CircleCI](https://circleci.com/gh/lifeofguenter/ansible-role-bitcoin-core.svg?style=svg)](https://circleci.com/gh/lifeofguenter/ansible-role-bitcoin-core)
-
 # Ansible Role: Bitcoin Core
 
 An Ansible role that compiles and installs bitcoind, bitcoin-cli and bitcoin-tx (e.g. headless) on Debian like systems.
+
+Forked From https://github.com/lifeofguenter/ansible-role-bitcoin-core
 
 ## Requirements
 
@@ -36,6 +36,7 @@ none
 
 ## Thank you
 
+- Gunter Grodotzki ([lifeofguenter](https://github.com/lifeofguenter/) for [ansible-role-bitcoin-core](https://github.com/lifeofguenter/ansible-role-bitcoin-core)
 - Cédric Félizard ([infertux](https://github.com/infertux)) for [munin-bitcoin](https://github.com/infertux/munin-bitcoin)
 
 ## License
