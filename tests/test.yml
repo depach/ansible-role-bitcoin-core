@@ -4,9 +4,9 @@
   remote_user: root
 
   vars:
-    bitcoin_user: root
-    bitcoin_home: /var/lib/bitcoin
-    bitcoin_conf_rpcallowip:
+    litecoin_user: root
+    litecoin_home: /var/lib/litecoin
+    litecoin_conf_rpcallowip:
       - 192.168.1.1
       - 192.168.1.2
 

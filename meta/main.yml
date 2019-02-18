@@ -1,9 +1,9 @@
 ---
 
 galaxy_info:
-  author: Gunter Grodotzki
-  description: Compile and install bitcoind / bitcoin-cli / bitcoin-tx (e.g. headless).
-  company: 9JKH (Pty) Ltd.
+  author: Jared Cassidy
+  description: Compile and install litecoind / litecoin-cli / litecoin-tx (e.g. headless).
+  company: none
   license: MIT
   min_ansible_version: 2.5
   platforms:
@@ -17,7 +17,7 @@ galaxy_info:
         - jessie
         - wheezy
   galaxy_tags:
-    - bitcoin
-    - btc
+    - litecoin
+    - ltc
     - cryptocurrency
 dependencies: []

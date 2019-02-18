@@ -8,11 +8,13 @@
     cache_valid_time: 3600
   vars:
     packages:
+      - autoconf
       - ca-certificates
       - make
       - gcc
       - g++
       - pkg-config
+      - libtool
       - libssl-dev
       - libboost-dev
       - libboost-system-dev
@@ -25,15 +27,20 @@
 
 - name: fetch source code
   unarchive:
-    src: https://bitcoin.org/bin/bitcoin-core-{{ bitcoin_version }}{{ bitcoin_patch_version }}/bitcoin-{{ bitcoin_version }}{{ bitcoin_patch_version }}.tar.gz
+    src: https://github.com/litecoin-project/litecoin/archive/v{{ litecoin_version }}.tar.gz
     dest: /tmp
     remote_src: True
 
 - name: make clean
   command: make clean
   args:
-    chdir: /tmp/bitcoin-{{ bitcoin_version }}
+    chdir: /tmp/litecoin-{{ litecoin_version }}
   ignore_errors: yes
+
+- name: autogen
+  command: ./autogen.sh
+  args:
+    chdir: /tmp/litecoin-{{ litecoin_version }}
 
 - name: configure
   command: >
@@ -55,16 +62,16 @@
     --with-incompatible-bdb
     --with-gui=no
   args:
-    chdir: /tmp/bitcoin-{{ bitcoin_version }}
+    chdir: /tmp/litecoin-{{ litecoin_version }}
 
 - name: make
   command: make
   args:
-    chdir: /tmp/bitcoin-{{ bitcoin_version }}
+    chdir: /tmp/litecoin-{{ litecoin_version }}
 
 - name: install
   command: make install
   args:
-    chdir: /tmp/bitcoin-{{ bitcoin_version }}
+    chdir: /tmp/litecoin-{{ litecoin_version }}
   become: yes
-  notify: restart_bitcoind
+  notify: restart_litecoind

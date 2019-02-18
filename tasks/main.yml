@@ -1,23 +1,23 @@
 ---
 
 - set_fact:
-    bitcoin_patch_version_match: ".0"
-  when: bitcoin_patch_version == ""
+    litecoin_patch_version_match: ".0"
+  when: litecoin_patch_version == ""
 
-- name: get current bitcoin version
-  command: bitcoin-cli -version
-  register: bitcoin_version_current
+- name: get current litecoin version
+  command: litecoin-cli -version
+  register: litecoin_version_current
   ignore_errors: yes
 
-- include: compile.yml
-  when: bitcoin_version_current.rc != 0 or not bitcoin_version_current.stdout is search(bitcoin_version_string_match)
+# - include: compile.yml
+#   when: litecoin_version_current.rc != 0 or not litecoin_version_current.stdout is search(litecoin_version_string_match)
 
-- include: setup.yml
+# - include: setup.yml
 
 - name: check if munin-node is installed
   command: dpkg -L munin-node
-  register: bitcoin_munin_node_check
+  register: litecoin_munin_node_check
   ignore_errors: yes
 
 - include: munin-plugin.yml
-  when: bitcoin_munin_node_check.rc == 0
+  when: litecoin_munin_node_check.rc == 0
