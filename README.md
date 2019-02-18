@@ -10,7 +10,7 @@ none
 
 ## Role Variables
 
-- `litecoin_version: 0.17.1`
+- `litecoin_version: 0.16.3`
 
 - `litecoin_user: litecoin`
 

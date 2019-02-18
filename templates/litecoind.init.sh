@@ -1,41 +1,41 @@
 #! /bin/sh
 ### BEGIN INIT INFO
-# Provides:          bitcoind
+# Provides:          litecoind
 # Required-Start:    $remote_fs
 # Required-Stop:     $remote_fs
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: bitcoind daemon startup script
-# Description:       bitcoind daemon startup script
+# Short-Description: litecoind daemon startup script
+# Description:       litecoind daemon startup script
 ### END INIT INFO
 
 # Author: Pavel A. Karoukin <pavel@yepcorp.com>
 
 # @daryltucker
 ## Installation
-# Copy this file to: /etc/init.d/bitcoind
-# Execute: chmod +x /etc/init.d/bitcoind
+# Copy this file to: /etc/init.d/litecoind
+# Execute: chmod +x /etc/init.d/litecoind
 ## Run
-# Execute: service bitcoind start
+# Execute: service litecoind start
 ## Stop
-# Execute: service bitcoind stop
+# Execute: service litecoind stop
 ## Startup (Enable)
-# Execute: update-rc.d bitcoind defaults
-# Execute: update-rc.d bitcoind enable
+# Execute: update-rc.d litecoind defaults
+# Execute: update-rc.d litecoind enable
 ## Startup (Disable)
-# Execute: update-rc.d bitcoind disable
+# Execute: update-rc.d litecoind disable
 
 # Do NOT "set -e"
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="BitCoin Daemon"
-NAME=bitcoind
+DESC="litecoin Daemon"
+NAME=litecoind
 DAEMON=/usr/local/bin/$NAME
 PIDFILE=/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
-CHUID={{ bitcoin_user }}
-DAEMON_ARGS="-daemon -conf=/etc/bitcoin/bitcoind.conf"
+CHUID={{ litecoin_user }}
+DAEMON_ARGS="-daemon -conf=/etc/litecoin/litecoind.conf"
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0

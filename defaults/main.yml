@@ -1,15 +1,15 @@
 ---
 
-bitcoin_version: 0.17.1
+litecoin_version: 0.16.3
 
-bitcoin_patch_version: ""
+litecoin_patch_version: ""
 
-bitcoin_patch_version_match: "{{ bitcoin_patch_version }}"
+litecoin_patch_version_match: "{{ litecoin_patch_version }}"
 
-bitcoin_user: bitcoin
+litecoin_user: litecoin
 
-bitcoin_home: "/home/{{ bitcoin_user }}"
+litecoin_home: "/home/{{ litecoin_user }}"
 
-bitcoin_conf_datadir: "{{ bitcoin_home }}"
+litecoin_conf_datadir: "{{ litecoin_home }}"
 
-bitcoin_conf_pid: /run/bitcoind/bitcoind.pid
+litecoin_conf_pid: /run/litecoind/litecoind.pid
